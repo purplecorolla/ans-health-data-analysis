@@ -1,7 +1,6 @@
 
 # Projeto ANS - Teste Técnico de Nivelamento
 
-**Desenvolvido por:** Caio  
 **Banco de Dados:** PostgreSQL  
 **ETL/Data Cleaning:** Python + pandas  
 **Volume de dados:** +6 milhões de linhas  
@@ -14,8 +13,9 @@
 O teste técnico foi dividido em três etapas principais:
 
 ### 🔹 Teste 1 – Manipulação de Arquivos
-- Descompactar o PDF "Rol de Procedimentos e Eventos em Saúde"
-- Garantir que os arquivos estavam acessíveis para extração posterior
+- Acessar a página da ANS: https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos
+- Baixar os arquivos PDF "Anexo I" e "Anexo II"
+- (Opcional) Compactar os arquivos em um `.zip` com o nome `Teste_{seu_nome}.zip`
 
 ### 🔹 Teste 2 – Transformação de Dados
 - Extrair tabelas do PDF (todas as páginas)
@@ -37,7 +37,7 @@ O teste técnico foi dividido em três etapas principais:
 ## 📥 Links para Download dos Dados Oficiais
 
 - 📄 Rol de Procedimentos e Eventos em Saúde (PDF):  
-  https://www.gov.br/ans/pt-br/arquivos/planos-de-saude-e-operadoras/rol/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf
+  https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos
 
 - 📊 Demonstrativos Contábeis Trimestrais (2023 e 2024):  
   https://www.gov.br/ans/pt-br/assuntos/dados-e-indicadores/dados-financeiros/demonstrativos-contabeis/demonstrativos-contabeis
@@ -72,6 +72,7 @@ pip install pandas
 ├── demonstrativos_utf8_final.csv  # gerado após execução do script
 ├── limpeza_dados.py
 ├── script_teste3.sql
+├── scraper_anexos_ans.py  # script do Teste 1
 └── Entrega_Teste3_Caio.pdf
 ```
 
@@ -110,11 +111,11 @@ As queries estão no final do `script_teste3.sql`, mas você pode rodá-las dire
 
 - `limpeza_dados.py` – script Python para normalização do CSV
 - `script_teste3.sql` – estrutura do banco + queries
-- `Entrega_Teste3_Caio.pdf` – documentação geral da entrega
+- `webscraper_ans.py` – web scraper do Teste 1 (Anexo I e II)
+- `analise_final_dados_ans.pdf` – documentação geral da entrega
 
 ---
 
 ## ✅ Conclusão
 
 Este projeto demonstra a capacidade de manipular grandes volumes de dados públicos, fazer limpeza e transformação com Python, estruturar uma base relacional no PostgreSQL e extrair insights relevantes por meio de SQL puro.
-
