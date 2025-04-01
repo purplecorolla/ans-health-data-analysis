@@ -1,0 +1,14 @@
+# IDEs
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# CSVs pesados
+data/*.csv
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
